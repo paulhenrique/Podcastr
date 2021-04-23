@@ -6,7 +6,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import api from '../services/api';
 import { convertDurationToTimeStyring } from '../utils/convertDurationToTimeString';
 import { usePlayer } from '../contexts/PlayerContext';
-
+import Head from 'next/head';
 
 import styles from './home.module.scss';
 
@@ -31,6 +31,9 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
   const episodeList = [...latestEpisodes, ...allEpisodes];
   return (
     <div className={styles.homepage}>
+      <Head>
+        <title>Home | Podcastr</title>
+      </Head>
       <section className={styles.latestEpisodes}>
         <h2>Últimos lançamentos</h2>
 
